@@ -36,13 +36,7 @@ namespace WorldMap
 
         private void dgvRivers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
-
-            var row = dgvRivers.Rows[e.RowIndex];
-            selectedId = Convert.ToInt32(row.Cells["RiverID"].Value);
-
-            txtName.Text = row.Cells["Name"].Value?.ToString();
-            txtLength.Text = row.Cells["LengthKm"].Value?.ToString();
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -142,6 +136,17 @@ namespace WorldMap
             }
 
             new RiverCountriesForm(selectedId).ShowDialog();
+        }
+
+        private void dgvRivers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = dgvRivers.Rows[e.RowIndex];
+            selectedId = Convert.ToInt32(row.Cells["RiverID"].Value);
+
+            txtName.Text = row.Cells["Name"].Value?.ToString();
+            txtLength.Text = row.Cells["LengthKm"].Value?.ToString();
         }
     }
 }

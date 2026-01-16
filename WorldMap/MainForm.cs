@@ -39,7 +39,7 @@ namespace WorldMap
 
         private void btnRegions_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Regions form hali yozilmagan 🙂");
+            new RegionsForm().ShowDialog();  
         }
 
         private void btnRivers_Click_1(object sender, EventArgs e)

@@ -91,6 +91,7 @@
             this.dgvRivers.RowTemplate.Height = 24;
             this.dgvRivers.Size = new System.Drawing.Size(773, 150);
             this.dgvRivers.TabIndex = 5;
+            this.dgvRivers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRivers_CellContentClick);
             // 
             // btnAdd
             // 

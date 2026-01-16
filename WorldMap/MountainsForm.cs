@@ -122,5 +122,16 @@ namespace WorldMap
             if (s.Length == 0) return null;
             return int.TryParse(s, out var v) ? v : (int?)null;
         }
+
+        private void dgvMountains_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = dgvMountains.Rows[e.RowIndex];
+            selectedId = Convert.ToInt32(row.Cells["MountainID"].Value);
+
+            txtName.Text = row.Cells["Name"].Value?.ToString();
+            txtHeight.Text = row.Cells["HeightM"].Value?.ToString();
+        }
     }
 }

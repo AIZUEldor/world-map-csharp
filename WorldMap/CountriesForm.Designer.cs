@@ -79,6 +79,7 @@
             this.cmbContinent.Name = "cmbContinent";
             this.cmbContinent.Size = new System.Drawing.Size(534, 24);
             this.cmbContinent.TabIndex = 3;
+            this.cmbContinent.SelectedIndexChanged += new System.EventHandler(this.cmbContinent_SelectedIndexChanged);
             // 
             // txtPopulation
             // 

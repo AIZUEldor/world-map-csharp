@@ -78,11 +78,11 @@
             // dgvMountains
             // 
             this.dgvMountains.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMountains.Location = new System.Drawing.Point(307, 42);
+            this.dgvMountains.Location = new System.Drawing.Point(15, 110);
             this.dgvMountains.Name = "dgvMountains";
             this.dgvMountains.RowHeadersWidth = 51;
             this.dgvMountains.RowTemplate.Height = 24;
-            this.dgvMountains.Size = new System.Drawing.Size(373, 204);
+            this.dgvMountains.Size = new System.Drawing.Size(778, 204);
             this.dgvMountains.TabIndex = 4;
             this.dgvMountains.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMountains_CellContentClick);
             // 

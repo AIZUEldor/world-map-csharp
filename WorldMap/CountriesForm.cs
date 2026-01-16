@@ -41,39 +41,6 @@ namespace WorldMap
         {
             dgvCountries.DataSource = CountryService.GetAll();
         }
-
-        private void dgvCountries_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            MessageBox.Show("RowIndex = " + e.RowIndex);
-            if (e.RowIndex < 0) return;
-
-            var row = dgvCountries.Rows[e.RowIndex];
-
-            // ID ni doim nomi bilan oling
-            selectedId = Convert.ToInt32(row.Cells["CountryID"].Value);
-
-            txtName.Text = row.Cells["Name"].Value?.ToString() ?? "";
-            txtISO.Text = row.Cells["ISOCode"].Value?.ToString() ?? "";
-            txtCurrency.Text = row.Cells["Currency"].Value?.ToString() ?? "";
-            txtPopulation.Text = row.Cells["Population"].Value?.ToString() ?? "";
-            txtArea.Text = row.Cells["AreaKm2"].Value?.ToString() ?? "";
-
-            // Continent tanlash
-            string contName = row.Cells["Continent"].Value?.ToString() ?? "";
-
-            for (int i = 0; i < cmbContinent.Items.Count; i++)
-            {
-                if (((Continent)cmbContinent.Items[i]).Name == contName)
-                {
-                    cmbContinent.SelectedIndex = i;
-                    break;
-                }
-            }
-
-
-        }
-
         private void ClearInputs()
         {
             selectedId = -1;
@@ -222,6 +189,35 @@ namespace WorldMap
         }
 
         private void dgvCountries_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("RowIndex = " + e.RowIndex);
+            if (e.RowIndex < 0) return;
+
+            var row = dgvCountries.Rows[e.RowIndex];
+
+            // ID ni doim nomi bilan oling
+            selectedId = Convert.ToInt32(row.Cells["CountryID"].Value);
+
+            txtName.Text = row.Cells["Name"].Value?.ToString() ?? "";
+            txtISO.Text = row.Cells["ISOCode"].Value?.ToString() ?? "";
+            txtCurrency.Text = row.Cells["Currency"].Value?.ToString() ?? "";
+            txtPopulation.Text = row.Cells["Population"].Value?.ToString() ?? "";
+            txtArea.Text = row.Cells["AreaKm2"].Value?.ToString() ?? "";
+
+            // Continent tanlash
+            string contName = row.Cells["Continent"].Value?.ToString() ?? "";
+
+            for (int i = 0; i < cmbContinent.Items.Count; i++)
+            {
+                if (((Continent)cmbContinent.Items[i]).Name == contName)
+                {
+                    cmbContinent.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        private void cmbContinent_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
